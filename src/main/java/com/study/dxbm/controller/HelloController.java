@@ -1,5 +1,7 @@
 package com.study.dxbm.controller;
 
+import com.study.dxbm.global.exception.ServiceException;
+import com.study.dxbm.global.exception.ServiceExceptionEnum;
 import com.study.dxbm.pojo.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,13 +34,31 @@ public class HelloController {
      **/
     @RequestMapping("/user")
     public User user(){
-
         return User.builder()
                 .name("zhangsan")
                 .aget("18")
                 .birthDay(new Date())
                 .qqList(Arrays.asList("111","222"))
                 .build();
+    }
 
+    /**
+     * description: 测试非自定义异常
+     * date: 2020/5/16 11:43
+     * author: 古陵逝烟
+     **/
+    @RequestMapping("/exception1")
+    public void exception1(){
+        throw  new NullPointerException("空指针异常");
+    }
+
+    /**
+     * description: 测试自定义异常
+     * date: 2020/5/16 11:43
+     * author: 古陵逝烟
+     **/
+    @RequestMapping("/exception2")
+    public void exception2(){
+        throw  new ServiceException(ServiceExceptionEnum.USER_NOT_FOUND);
     }
 }

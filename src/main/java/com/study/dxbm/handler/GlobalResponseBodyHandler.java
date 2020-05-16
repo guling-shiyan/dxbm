@@ -12,7 +12,8 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 /**
  * @Author 古陵逝烟
  * @Date 2020/5/14 16:43
- * @Description 只拦截 Controller 所在包，避免其它类似 swagger 提供的 API 被切面拦截
+ * @Description 全局返回处理器
+ * 只拦截 Controller 所在包，避免其它类似 swagger 提供的 API 被切面拦截
  * @Version V1.0
  **/
 @ControllerAdvice(basePackages = "com.study.dxbm.controller")

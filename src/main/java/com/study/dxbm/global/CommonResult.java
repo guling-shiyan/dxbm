@@ -1,5 +1,6 @@
 package com.study.dxbm.global;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.springframework.util.Assert;
@@ -53,12 +54,12 @@ public class CommonResult <T> implements Serializable{
         return result;
     }
 
-    @JsonIgnore // 忽略，避免 jackson 序列化给前端
+//    @JSONField(serialize = false) // 忽略，避免 jackson 序列化给前端
     public boolean isSuccess() { // 方便判断是否成功
         return CODE_SUCCESS.equals(code);
-    }
+        }
 
-    @JsonIgnore // 忽略，避免 jackson 序列化给前端
+//    @JSONField(serialize = false) // 忽略，避免 jackson 序列化给前端
     public boolean isError() { // 方便判断是否失败
         return !isSuccess();
     }
