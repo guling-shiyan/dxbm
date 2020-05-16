@@ -3,10 +3,13 @@ package com.study.dxbm.config;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
+import com.study.dxbm.interceptor.CustomInterceptor;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.ArrayList;
@@ -58,5 +61,25 @@ public class CustomWebConfig implements WebMvcConfigurer {
         fastMediaTypes.add(MediaType.APPLICATION_JSON);
         fastJsonHttpMessageConverter.setSupportedMediaTypes(fastMediaTypes);
         converters.add(fastJsonHttpMessageConverter);
+    }
+    
+    /**
+     * description: 注册自定义的连接器 
+     * date: 2020/5/16 15:57
+     * author: 古陵逝烟 
+     **/ 
+   @Bean 
+    public CustomInterceptor customInterceptor(){
+        return new CustomInterceptor();
+    }
+
+    /**
+     * description: 添加连接器 
+     * date: 2020/5/16 15:27 
+     * author: 古陵逝烟 
+     **/ 
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(this.customInterceptor()).addPathPatterns("/**");
     }
 }
