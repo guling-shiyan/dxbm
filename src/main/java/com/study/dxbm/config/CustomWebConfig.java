@@ -68,7 +68,7 @@ public class CustomWebConfig implements WebMvcConfigurer {
      * date: 2020/5/16 15:57
      * author: 古陵逝烟 
      **/ 
-   @Bean 
+//   @Bean
     public CustomInterceptor customInterceptor(){
         return new CustomInterceptor();
     }
@@ -80,6 +80,6 @@ public class CustomWebConfig implements WebMvcConfigurer {
      **/ 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(this.customInterceptor()).addPathPatterns("/**");
+//        registry.addInterceptor(this.customInterceptor()).addPathPatterns("/**");
     }
 }

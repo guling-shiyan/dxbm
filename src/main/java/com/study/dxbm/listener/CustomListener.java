@@ -18,7 +18,7 @@ import javax.servlet.annotation.WebListener;
 public class CustomListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        log.info("CustomListener#contextInitialized...");
+//        log.info("CustomListener#contextInitialized...");
     }
 
     @Override

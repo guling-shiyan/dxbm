@@ -1,9 +1,9 @@
 package com.study.dxbm.pojo;
 
 import com.alibaba.fastjson.annotation.JSONField;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
+import javax.validation.constraints.Min;
 import java.util.Date;
 import java.util.List;
 
@@ -15,9 +15,13 @@ import java.util.List;
  **/
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
 
+    @Min(5)
     private String name;
+    @Min(5)
     private String aget;
     @JSONField(format = "yyyy年MM月dd日")
     private Date birthDay;

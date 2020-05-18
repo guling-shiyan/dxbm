@@ -3,6 +3,7 @@ package com.study.dxbm.controller;
 import com.study.dxbm.global.exception.ServiceException;
 import com.study.dxbm.global.exception.ServiceExceptionEnum;
 import com.study.dxbm.pojo.User;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +19,7 @@ import java.util.Date;
  **/
 @RestController
 @Slf4j
+@Api(hidden = true)
 public class HelloController {
 //    private Logger log = LoggerFactory.getLogger(HelloController.class);
 

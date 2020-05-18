@@ -20,6 +20,6 @@ import java.io.IOException;
 public class CustomServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        log.info("CustomServlet#doGet...");
+//        log.info("CustomServlet#doGet...");
     }
 }
