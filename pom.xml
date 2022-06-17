@@ -36,7 +36,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.54</version>
+            <version>1.2.83</version>
         </dependency>
 
         <!-- 1. swagger-bootstrap-ui 目前改名为 knife4j -->
